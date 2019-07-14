@@ -1,6 +1,6 @@
 <template>
-  <div style=" margin :30px">
-    <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
+  <div>
+    <b-navbar toggleable="lg" type="dark" variant="info" fixed="top" class="nav">
       <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -36,7 +36,10 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <nuxt />
+
+    <div style="margin-top:60px">
+      <nuxt />
+    </div>
   </div>
 </template>
 
@@ -59,33 +62,7 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.nav {
+  height: 60px;
 }
 </style>
