@@ -23,7 +23,7 @@ export default {
   methods: {
     setfileid(id) {
       this.$store.commit("setfileid", id);
-      alert("set ok");
+      this.$store.commit("togletree");
     }
   }
 };

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="menu">
+    <div class="menu" v-if="tree">
       <b-list-group>
         <node v-for="ele in root.children" :node="ele" :key="ele.name"></node>
       </b-list-group>
     </div>
-    <div class="content">
+    <b-container>
       <file :file="file"></file>
-    </div>
+    </b-container>
   </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
     },
     file() {
       return this.$store.state.file;
+    },
+    tree() {
+      return this.$store.state.tree;
     }
   },
   created() {
@@ -59,13 +62,20 @@ export default {
 <style scoped>
 .menu {
   left: 0;
+  z-index: 9;
+  background-color: black;
   position: fixed;
   height: calc(100vh - 104px);
   border: 1px solid #ccc;
   width: 150px;
 }
+.space {
+  width: 150px;
+}
 .content {
   position: absolute;
-  left: 150px;
+
+  width: 100%;
+  background-color: gray;
 }
 </style>

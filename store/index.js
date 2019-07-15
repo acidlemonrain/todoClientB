@@ -1,5 +1,6 @@
 export const state = () => ({
 	fileid: 0,
+	tree: false,
 	file: {
 		name: 'defalt',
 		content: 'defalt'
@@ -15,5 +16,8 @@ export const mutations = {
 	},
 	setfile(state, file) {
 		state.file = file;
+	},
+	togletree(state) {
+		state.tree = !state.tree;
 	}
 };
