@@ -64,6 +64,7 @@ export default {
   left: 0;
   z-index: 9;
   background-color: black;
+  color: wheat;
   position: fixed;
   height: calc(100vh - 104px);
   border: 1px solid #ccc;
