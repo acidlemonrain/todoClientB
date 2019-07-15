@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{file.name}}</h1>
-    <p>{{file.content}}</p>
+    <p v-html="file.content"></p>
   </div>
 </template>
 
@@ -11,9 +11,14 @@ export default {
     file: {
       type: Object,
       default: {
-        name: "",
-        content: ""
+        name: "defalt",
+        content: "defalt"
       }
+    }
+  },
+  computed: {
+    file() {
+      return this.$store.state.file;
     }
   }
 };

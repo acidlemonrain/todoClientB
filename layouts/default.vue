@@ -1,14 +1,14 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info" fixed="top" class="nav">
+    <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
       <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item :to="'/todolist'">todolist</b-nav-item>
-          <b-nav-item :to="'/treelist'">treelist</b-nav-item>
+          <b-nav-item to="/treelist">Link</b-nav-item>
+          <b-nav-item to="/todolist">Disabled</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -36,8 +36,7 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-
-    <div style="margin-top:60px">
+    <div style="margin-top:56px">
       <nuxt />
     </div>
   </div>
@@ -62,7 +61,33 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-.nav {
-  height: 60px;
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
 }
 </style>

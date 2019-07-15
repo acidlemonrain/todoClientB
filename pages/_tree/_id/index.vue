@@ -6,7 +6,7 @@
       </b-list-group>
     </div>
     <div class="content">
-      <NuxtChild :key="$route.params.id" />
+      <file :file="file"></file>
     </div>
   </div>
 </template>
@@ -24,14 +24,17 @@ export default {
       root: {
         name: "lsadkjl",
         children: []
-      },
-      file: {
-        name: "",
-        content: ""
       }
     };
   },
-
+  computed: {
+    fileid() {
+      return this.$store.state.fileid;
+    },
+    file() {
+      return this.$store.state.file;
+    }
+  },
   created() {
     this.$axios
       .get("/tree/menu/" + this.$route.params.id)
@@ -39,6 +42,16 @@ export default {
         this.root.children = res.data;
       })
       .catch(e => alert(e));
+  },
+  watch: {
+    fileid(to) {
+      this.$axios
+        .get("/file/" + to)
+        .then(res => {
+          this.$store.commit("setfile", res.data);
+        })
+        .catch(e => alert(e));
+    }
   }
 };
 </script>
@@ -53,6 +66,6 @@ export default {
 }
 .content {
   position: absolute;
-  left: cal(100vw-150px);
+  left: 150px;
 }
 </style>
